@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nhận diện phương tiện và biển số</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>🚗 Nhận diện phương tiện giao thông<br/>và biển số xe 🎥</h1>
+    <div class="layout">
+      <section class="main-view">
+        <div id="mediaBox" class="media-box">
+          <video id="videoPlayer" controls autoplay muted playsinline hidden></video>
+          <img id="imageViewer" alt="preview" hidden />
+          <img id="cameraViewer" alt="camera" hidden />
+          <canvas id="overlay" class="overlay" hidden></canvas>
+          <button id="playPlaceholder" class="play-btn" aria-label="play">
+            ▶
+          </button>
+        </div>
+        <div id="progress" class="progress-bar"></div>
+        <div class="actions">
+          <label class="btn">
+            <input id="filePicker" type="file" accept="image/*,video/*" hidden />
+            Chọn file video/ảnh
+          </label>
+          <button id="uploadBtn" class="btn" disabled>Tải video/ảnh</button>
+          <button id="clearBtn" class="btn btn-danger" disabled>Xóa video/ảnh</button>
+          <button id="cameraBtn" class="btn">Bật/tắt camera</button>
+        </div>
+        <div class="notice">
+          <div class="notice-title">bảng thông báo</div>
+          <div id="summary" class="summary">—</div>
+        </div>
+      </section>
+      <aside class="sidebar">
+        <div class="list-title">Danh sách xe và biển số</div>
+        <ul id="detections" class="detections"></ul>
+      </aside>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
+
